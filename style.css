@@ -34,6 +34,20 @@
     color: #fff;
   }
   
+  @media (max-width: 767px) {
+    /* Styles for screens smaller than 768px (e.g., mobile devices) */
+    /* Adjust the styles to fit the mobile layout */
+    .hero-section {
+      padding: 20px;
+    }
+    /* Add more styles for other sections as needed */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
   .hero {
     background-image: url('pubg1.jpg');
     background-size: cover;
@@ -160,12 +174,6 @@
   .features {
     height: 400px;
     width: 100%;
-    background-image: 
-        url("pubg2.jpg"),
-        url("pubg4.jpg");
-    background-repeat: no-repeat, no-repeat;
-    background-position: right, left; 
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px;
