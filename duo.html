@@ -37,34 +37,46 @@
       <input type="text" id="expiry" name="expiry">
 
       <label for="Phone">Phone Number:</label>
-      <input type="text" id="Phone" name="Phone" required> <br><hr>
+      <input type="text" id="Phone" name="Phone" required> <br>
       
-      <label for="name2">Player Name 2:</label>
-      <input type="text" id="name" name="name" required>
+      <label for="player2">Add Second Player?</label>
+      <input type="checkbox" id="player2" name="player2"><br>
+      
+      <center>
+        <div id="second-player-details" style="display: none;">
+          <label for="name2">Second Player Name:<br></label>
+          <input type="text" id="name2" name="name2" required><br>
+      
+          <label for="email2">Second Player Email:<br></label>
+          <input type="email" id="email2" name="email2" required><br>
+      
+          <label for="Instagram2">Second Player Instagram ID:<br></label>
+          <input type="text" id="Instagram2" name="Instagram2"><br>
+      
+          <label for="Phone2">Second Player Phone Number:<br></label><br>
+          <input type="text" id="Phone2" name="Phone2" required>
+        </div>
+        </center>
+        <input type="submit"  id="submitButton"  value="Proceed TO Pay Rs 299">
+      </form>
+      
+      <script>
+        const player2Checkbox = document.getElementById('player2');
+        const secondPlayerDetails = document.getElementById('second-player-details');
+        const submitButton = document.getElementById('submitButton');
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        player2Checkbox.addEventListener('change', function () {
+          if (this.checked) {
+            secondPlayerDetails.style.display = 'block';
+            submitButton.value = 'Proceed TO Pay Rs 598';
+          } else {
+            secondPlayerDetails.style.display = 'none';
+            submitButton.value = 'Proceed TO Pay Rs 299';
+          }
+        });
+      </script>
 
-      <label for="Instagram">Instagram ID:</label>
-      <input type="text" id="expiry" name="expiry">
-
-      <label for="Phone">Phone Number:</label>
-      <input type="text" id="Phone" name="Phone" required>
-
-      <input type="submit" value="Proceed TO Pay Rs 350/-">
     </form>
   </section>
-      <footer>
-    <div class="footer">
-      <p>&copy; 2023 BGMI Esports. All rights reserved.</p>
-      <p>Developed By IshanKapoor. For any Queries, problems and objctions contact the owner of the site.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
