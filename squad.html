@@ -27,67 +27,118 @@
   <section class="form-section">
     <h2>Player Information : Game Mode - Squad</h2>
     <form action="paymentgateway.html" method="POST">
-      <label for="name1">Player Name 1:</label>
+      <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="Instagram">Instagram ID:</label>
-      <input type="text" id="expiry" name="expiry">
-
-      <label for="Phone">Phone Number:</label>
-      <input type="text" id="Phone" name="Phone" required> <br><hr>
-      
-      <label for="name2">Player Name 2:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="Instagram">Instagram ID:</label>
-      <input type="text" id="expiry" name="expiry">
-
-      <label for="Phone">Phone Number:</label>
-      <input type="text" id="Phone" name="Phone" required>
-          
-      <label for="name3">Player Name 3:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="Instagram">Instagram ID:</label>
-      <input type="text" id="expiry" name="expiry">
-
-      <label for="Phone">Phone Number:</label>
-      <input type="text" id="Phone" name="Phone" required>
     
-      <label for="name4">Player Name 4:</label>
-      <input type="text" id="name" name="name" required>
-
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
-
+    
       <label for="Instagram">Instagram ID:</label>
-      <input type="text" id="expiry" name="expiry">
-
+      <input type="text" id="Instagram" name="Instagram">
+    
       <label for="Phone">Phone Number:</label>
       <input type="text" id="Phone" name="Phone" required>
-      <input type="submit" value="Proceed TO Pay Rs 699/-">
-    </form>
-  </section>
-      <footer>
-    <div class="footer">
-      <p>&copy; 2023 BGMI Esports. All rights reserved.</p>
-      <p>Developed By IshanKapoor. For any Queries, problems and objctions contact the owner of the site.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+    <center> 
+      <label for="player2">Add Second Player?</label>
+      <input type="checkbox" id="player2" name="player2"><br>
+    
+      <div id="second-player-details" style="display: none;">
+        <br>  <label for="name2">Second Player Name:<br></label>
+        <input type="text" id="name2" name="name2" required><br>
+    
+        <label for="email2">Second Player Email:<br></label>
+        <input type="email" id="email2" name="email2" required><br>
+    
+        <label for="Instagram2">Second Player Instagram ID:<br></label>
+        <input type="text" id="Instagram2" name="Instagram2"><br>
+    
+        <label for="Phone2">Second Player Phone Number:<br></label>
+        <input type="text" id="Phone2" name="Phone2" required><br>
       </div>
-    </div>
-  </footer>
+    
+      <label for="player3">Add Third Player?</label>
+      <input type="checkbox" id="player3" name="player3"><br>
+    
+      <div id="third-player-details" style="display: none;">
+        <br>  <label for="name3">Third Player Name:<br></label>
+        <input type="text" id="name3" name="name3" required><br>
+    
+        <label for="email3">Third Player Email:<br></label>
+        <input type="email" id="email3" name="email3" required><br>
+    
+        <label for="Instagram3">Third Player Instagram ID:<br></label>
+        <input type="text" id="Instagram3" name="Instagram3"><br>
+    
+        <label for="Phone3">Third Player Phone Number:<br></label>
+        <input type="text" id="Phone3" name="Phone3" required><br>
+      </div>
+    
+      <label for="player4">Add Fourth Player?</label>
+      <input type="checkbox" id="player4" name="player4"><br>
+    
+      <div id="fourth-player-details" style="display: none;">
+        <br>  <label for="name4">Fourth Player Name:<br></label>
+        <input type="text" id="name4" name="name4" required><br>
+    
+        <label for="email4">Fourth Player Email:<br></label>
+        <input type="email" id="email4" name="email4" required><br>
+    
+        <label for="Instagram4">Fourth Player Instagram ID:<br></label>
+        <input type="text" id="Instagram4" name="Instagram4"><br>
+    
+        <label for="Phone4">Fourth Player Phone Number:<br></label>
+        <input type="text" id="Phone4" name="Phone4" required><br>
+      </div>
+    </center>
+      <input type="submit" id="submitButton" value="Proceed TO Pay Rs 299">
+    </form>
+    
+    <script>
+      const player2Checkbox = document.getElementById('player2');
+      const player3Checkbox = document.getElementById('player3');
+      const player4Checkbox = document.getElementById('player4');
+    
+      const secondPlayerDetails = document.getElementById('second-player-details');
+      const thirdPlayerDetails = document.getElementById('third-player-details');
+      const fourthPlayerDetails = document.getElementById('fourth-player-details');
+    
+      const submitButton = document.getElementById('submitButton');
+      let paymentAmount = 299;
+    
+      player2Checkbox.addEventListener('change', function () {
+        if (this.checked) {
+          secondPlayerDetails.style.display = 'block';
+          paymentAmount += 299;
+        } else {
+          secondPlayerDetails.style.display = 'none';
+          paymentAmount -= 299;
+        }
+        submitButton.value = `Proceed TO Pay Rs ${paymentAmount}`;
+      });
+    
+      player3Checkbox.addEventListener('change', function () {
+        if (this.checked) {
+          thirdPlayerDetails.style.display = 'block';
+          paymentAmount += 299;
+        } else {
+          thirdPlayerDetails.style.display = 'none';
+          paymentAmount -= 299;
+        }
+        submitButton.value = `Proceed TO Pay Rs ${paymentAmount}`;
+      });
+    
+      player4Checkbox.addEventListener('change', function () {
+        if (this.checked) {
+          fourthPlayerDetails.style.display = 'block';
+          paymentAmount += 299;
+        } else {
+          fourthPlayerDetails.style.display = 'none';
+          paymentAmount -= 299;
+        }
+        submitButton.value = `Proceed TO Pay Rs ${paymentAmount}`;
+      });
+    </script>
+    
+  </section>
 </body>
 </html>
